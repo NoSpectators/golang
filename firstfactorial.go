@@ -5,10 +5,7 @@ import (
 	"fmt"
 )
 
-
-
 func FirstFactorial(num int) (result int) {
-
 	//base case
 	if num == 0{
 		return 1
