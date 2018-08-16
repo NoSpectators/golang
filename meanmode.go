@@ -21,7 +21,7 @@ func MeanMode(arr []int) int {
 	for key := range arrMap {
 		mapValues = append(mapValues,arrMap[key])
 	}		
-	mode := -10000
+	mode := mapValues[0]
 	for _, val := range mapValues {
 		if val > mode {
 			mode = val
