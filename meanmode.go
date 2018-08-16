@@ -6,7 +6,7 @@ import (
 
 func MeanMode(arr []int) int { 
 	//create dictionary/hash 
-	//computer mean 
+	//compute mean 
 	arrMap := make(map[int]int)
 	total := 0
 	length := len(arr)
