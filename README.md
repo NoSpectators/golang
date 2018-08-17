@@ -1,2 +1,2 @@
 # golang
-some golang code from Coderbyte
+some golang code from Coderbyte and CodingBat
