@@ -21,8 +21,8 @@ import (
 
 func createHash(key string) string {
 	hasher := md5.New()		//crypto/md5
-	hasher.Write([]byte(key))	//os
-	return hex.EncodeToString(hasher.Sum(nil))	//encoding/hex
+	hasher.Write([]byte(key))		//os
+	return hex.EncodeToString(hasher.Sum(nil))		//encoding/hex
 }
 
 func encrypt(data []byte, passphrase string) []byte {
