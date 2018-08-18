@@ -39,6 +39,7 @@ import (
 	"net/http"				//https://golang.org/pkg/net/http/
 )
 
+//using structs to build a toy database
 type Person struct {
 	ID        string   `json:"id,omitempty`
 	Firstname string   `json:"firstname,omitempty`
