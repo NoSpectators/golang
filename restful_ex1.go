@@ -1,10 +1,13 @@
 /*
-example of restful-api from
+SUMMARY
+this is example of building a restful-api with 
+go programming language.  taken from
 https://www.codementor.io/codehakase/
 building-a-restful-api-with-golang-a6yivzqdo
 */
 
-/*NOTE: this requires POSTMAN 
+/*NOTE1: 
+this requires POSTMAN 
 step1: click on "capture API requests with POSTMAN"
 step2: run the go file from CLI
 step3: pass this as url: "localhost:8080/people" without quotes
@@ -13,6 +16,18 @@ RESULT: [{"ID":"1","Firstname":"John","lastname":"Doe",
 "address":{"city":"City Z","state":"State Y"}}]
 step4: ctr-c to end go file, and check postman status: it should say 
 "could not get any response"
+*/
+
+/*NOTE2: 
+REST is an acronym for Representational State Transfer. 
+It is a web standards architecture and HTTP Protocol. The REST protocol, decribes six (6) constraints:
+
+Uniform Interface
+Cacheable
+Client-Server
+Stateless
+Code on Demand
+Layered System
 */
 
 package main
@@ -73,9 +88,9 @@ func main() {
 	router := mux.NewRouter()
 	people = append(people, Person{ID: "1", Firstname: "John", Lastname: "Doe", Address: &Address{City: "City X", State: "State X"}})
 	people = append(people, Person{ID: "2", Firstname: "Koko", Lastname: "Doe", Address: &Address{City: "City Z", State: "State Y"}})
-	router.HandleFunc("/people", GetPeopleEndpoint).Methods("GET")
-	router.HandleFunc("/people/{id}", GetPersonEndpoint).Methods("GET")
-	router.HandleFunc("/people/{id}", CreatePersonEndpoint).Methods("POST")
-	router.HandleFunc("/people/{id}", DeletePersonEndpoint).Methods("DELETE")
+	router.HandleFunc("/people", GetPeopleEndpoint).Methods("GET") //All persons in the phonebook document (database)
+	router.HandleFunc("/people/{id}", GetPersonEndpoint).Methods("GET") //Get a single person
+	router.HandleFunc("/people/{id}", CreatePersonEndpoint).Methods("POST")//Create a new person
+	router.HandleFunc("/people/{id}", DeletePersonEndpoint).Methods("DELETE")//Delete a person
 	log.Fatal(http.ListenAndServe(":8000", router))
 }
