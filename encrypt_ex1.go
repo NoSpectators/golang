@@ -20,14 +20,14 @@ import (
 )
 
 func createHash(key string) string {
-	hasher := md5.New()
-	hasher.Write([]byte(key))
-	return hex.EncodeToString(hasher.Sum(nil))
+	hasher := md5.New()											//crypto/md5
+	hasher.Write([]byte(key))									//os
+	return hex.EncodeToString(hasher.Sum(nil))					//encoding/hex
 }
 
 func encrypt(data []byte, passphrase string) []byte {
-	block, _ := aes.NewCipher([]byte(createHash(passphrase)))
-	gcm, err := cipher.NewGCM(block)
+	block, _ := aes.NewCipher([]byte(createHash(passphrase))) 	//crypto/aes
+	gcm, err := cipher.NewGCM(block) 							//crypto/cipher 
 	if err != nil {
 		panic(err.Error())
 	}
