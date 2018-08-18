@@ -8,15 +8,15 @@ https://www.thepolyglotdeveloper.com/2018/02/encrypt-decrypt-data-golang-applica
 package main
 
 import (
-	"crypto/aes"
-	"crypto/cipher"
-	"crypto/md5"
-	"crypto/rand"
-	"encoding/hex"
-	"fmt"
-	"io"
-	"io/ioutil"
-	"os"
+	"crypto/aes"		//https://golang.org/pkg/crypto/aes/
+	"crypto/cipher"		//https://golang.org/pkg/crypto/cipher/
+	"crypto/md5"		//https://golang.org/pkg/crypto/md5/
+	"crypto/rand"		//https://golang.org/pkg/crypto/rand/
+	"encoding/hex"		//https://golang.org/pkg/encoding/hex/
+	"fmt"				//https://golang.org/pkg/fmt/
+	"io"				//https://golang.org/pkg/io/
+	"io/ioutil"			//https://golang.org/pkg/io/ioutil/
+	"os"				//https://golang.org/pkg/os/
 )
 
 func createHash(key string) string {
