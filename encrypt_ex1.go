@@ -31,7 +31,7 @@ func encrypt(data []byte, passphrase string) []byte {
 	if err != nil {
 		panic(err.Error())
 	}
-	nonce := make([]byte, gcm.NonceSize())	//crypto/cipher
+	nonce := make([]byte, gcm.NonceSize())				//crypto/cipher
 	if _, err = io.ReadFull(rand.Reader, nonce); err != nil { //io
 		panic(err.Error())
 	}
