@@ -67,7 +67,7 @@ func encrypt(data []byte, passphrase string) []byte {
 	if _, err = io.ReadFull(rand.Reader, nonce); err != nil { 	 //io
 		panic(err.Error())
 	}
-	ciphertext := gcm.Seal(nonce, nonce, data, nil) //crypto/cipher
+	ciphertext := gcm.Seal(nonce, nonce, data, nil) 		//crypto/cipher
 	return ciphertext
 }
 //initialize the block cypher
