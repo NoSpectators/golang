@@ -36,7 +36,7 @@ import (
 	"fmt"	
 
 	//https://golang.org/pkg/io/
-	/*Package io provides basic interfaces to I/O primitives.*/		
+	/*provides basic interfaces to I/O primitives.*/		
 	"io"			
 
 	//https://golang.org/pkg/io/ioutil/
