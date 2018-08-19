@@ -27,7 +27,7 @@ func createHash(key string) string {
 
 func encrypt(data []byte, passphrase string) []byte {
 	block, _ := aes.NewCipher([]byte(createHash(passphrase))) 	//crypto/aes
-	gcm, err := cipher.NewGCM(block)		//crypto/cipher 
+	gcm, err := cipher.NewGCM(block)				//crypto/cipher 
 	if err != nil {
 		panic(err.Error())
 	}
