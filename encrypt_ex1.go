@@ -8,15 +8,44 @@ https://www.thepolyglotdeveloper.com/2018/02/encrypt-decrypt-data-golang-applica
 package main
 
 import (
-	"crypto/aes"		//https://golang.org/pkg/crypto/aes/
-	"crypto/cipher"		//https://golang.org/pkg/crypto/cipher/
-	"crypto/md5"		//https://golang.org/pkg/crypto/md5/
-	"crypto/rand"		//https://golang.org/pkg/crypto/rand/
-	"encoding/hex"		//https://golang.org/pkg/encoding/hex/
-	"fmt"			//https://golang.org/pkg/fmt/
-	"io"			//https://golang.org/pkg/io/
-	"io/ioutil"		//https://golang.org/pkg/io/ioutil/
-	"os"			//https://golang.org/pkg/os/
+
+	//https://golang.org/pkg/crypto/aes/
+	/*implements AES encryption (formerly Rijndael), 
+	as defined in U.S. Federal Information Processing Standards Publication 197.*/
+	"crypto/aes"		
+
+	//https://golang.org/pkg/crypto/cipher/
+	/*implements standard block cipher modes that can be wrapped around low-level 
+	block cipher implementations.*/
+	"crypto/cipher"		
+
+	//https://golang.org/pkg/crypto/md5/
+	/* implements the MD5 hash algorithm as defined in RFC 1321. */
+	"crypto/md5"		
+
+	//https://golang.org/pkg/crypto/rand/
+	/* implements a cryptographically secure pseudorandom number generator.*/
+	"crypto/rand"	
+
+	//https://golang.org/pkg/encoding/hex/
+	/*implements hexadecimal encoding and decoding.*/	
+	"encoding/hex"
+
+	//https://golang.org/pkg/fmt/
+	/*implements formatted I/O with functions analogous to C's printf and scanf.*/	
+	"fmt"	
+
+	//https://golang.org/pkg/io/
+	/*Package io provides basic interfaces to I/O primitives.*/		
+	"io"			
+
+	//https://golang.org/pkg/io/ioutil/
+	/*implements some I/O utility functions.*/
+	"io/ioutil"		
+
+	//https://golang.org/pkg/os/
+	/*provides a platform-independent interface to operating system functionality.*/
+	"os"			
 )
 
 func createHash(key string) string {
