@@ -25,6 +25,9 @@ func createHash(key string) string {
 	return hex.EncodeToString(hasher.Sum(nil))	//encoding/hex
 }
 
+//initialize the cypher block
+//choose a block cypher mode
+//generate a randomized nonce
 func encrypt(data []byte, passphrase string) []byte {
 	block, _ := aes.NewCipher([]byte(createHash(passphrase))) 	//crypto/aes
 	gcm, err := cipher.NewGCM(block)				//crypto/cipher 
@@ -32,13 +35,15 @@ func encrypt(data []byte, passphrase string) []byte {
 		panic(err.Error())
 	}
 	nonce := make([]byte, gcm.NonceSize())				//crypto/cipher
-	if _, err = io.ReadFull(rand.Reader, nonce); err != nil { 	//io
+	if _, err = io.ReadFull(rand.Reader, nonce); err != nil { 	 //io
 		panic(err.Error())
 	}
 	ciphertext := gcm.Seal(nonce, nonce, data, nil) //crypto/cipher
 	return ciphertext
 }
-
+//initialize the block cypher
+//choose a block cypher mode
+//we stored the nonce at the beginning of the encrypted data
 func decrypt(data []byte, passphrase string) []byte {
 	key := []byte(createHash(passphrase))
 	block, err := aes.NewCipher(key)
