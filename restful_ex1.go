@@ -93,5 +93,5 @@ func main() {
 	router.HandleFunc("/people/{id}", GetPersonEndpoint).Methods("GET") //Get a single person
 	router.HandleFunc("/people/{id}", CreatePersonEndpoint).Methods("POST")//Create a new person
 	router.HandleFunc("/people/{id}", DeletePersonEndpoint).Methods("DELETE")//Delete a person
-	log.Fatal(http.ListenAndServe(":8000", router))
+	log.Fatal(http.ListenAndServe(":8000", router)) //spin up server, assign a port
 }
