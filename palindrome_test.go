@@ -1,10 +1,28 @@
-package main
+package word
 
 import (
 	"testing"
+	"unicode"
 )
 
+//at command line, run go test -v palindrome_test.go
 
+func IsPalindrome(s string) string {	
+
+	letters := []string{} //get only lowercase letters
+
+	for _, char := range s {
+		if unicode.IsLetter(rune(char)){
+			letters = append(letters, string(unicode.ToLower(char)))
+		}
+	}
+	for i := 0; i < len(letters); i++ {
+		if letters[i] != letters[len(letters)-i-1] {
+			return "false"
+		}
+	}
+	return "true"	
+}
 
 func TestIsPalindrome(t *testing.T) {
 	var tests = []struct {

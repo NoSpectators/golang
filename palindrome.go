@@ -24,8 +24,6 @@ func IsPalindrome(s string) string {
 	return "true"	
 }
 
-
-
 func main() {
 
 	fmt.Println(IsPalindrome("racecaR"))//true
