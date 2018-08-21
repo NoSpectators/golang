@@ -74,16 +74,16 @@ func encrypt(data []byte, passphrase string) []byte {
 //choose a block cypher mode
 //we stored the nonce at the beginning of the encrypted data
 func decrypt(data []byte, passphrase string) []byte {
-	key := []byte(createHash(passphrase))
-	block, err := aes.NewCipher(key)
+	key := []byte(createHash(passphrase))	//crypto/aes
+	block, err := aes.NewCipher(key) 	//crypto/cipher
 	if err != nil {
 		panic(err.Error())
 	}
-	gcm, err := cipher.NewGCM(block)
+	gcm, err := cipher.NewGCM(block)	//crypto/cipher
 	if err != nil {
 		panic(err.Error())
 	}
-	nonceSize := gcm.NonceSize()
+	nonceSize := gcm.NonceSize()	//crypto/cipher
 	nonce, ciphertext := data[:nonceSize], data[nonceSize:]
 	plaintext, err := gcm.Open(nil, nonce, ciphertext, nil)
 	if err != nil {
