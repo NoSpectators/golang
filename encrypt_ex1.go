@@ -72,6 +72,9 @@ func encrypt(data []byte, passphrase string) []byte {
 }
 //initialize the block cypher
 //choose a block cypher mode
+/*NOTE: A nonce is a number or string used only once. 
+This is useful for generating a unique token for login pages to 
+prevent duplicate or unauthorized submissions*/
 //we stored the nonce at the beginning of the encrypted data
 func decrypt(data []byte, passphrase string) []byte {
 	key := []byte(createHash(passphrase))	//crypto/aes
