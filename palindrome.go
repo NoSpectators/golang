@@ -16,7 +16,7 @@ func IsPalindrome(s string) string {
 			letters = append(letters, string(unicode.ToLower(char)))
 		}
 	}
-	for i := 0; i < len(letters); i++ {
+	for i := 0; i < len(letters)/2; i++ {
 		if letters[i] != letters[len(letters)-i-1] {
 			return "false"
 		}
