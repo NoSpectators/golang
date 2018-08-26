@@ -14,6 +14,12 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
+    /*defer is often used with paired operations like 
+    open/close, connect/disconnect, lock/unlock
+    ensures resources are released in all cases
+    the right place for a defer statement is immediately 
+    after the resource has been acquired
+    */
     defer response.Body.Close()
 
     // Copy data from the response to standard output
