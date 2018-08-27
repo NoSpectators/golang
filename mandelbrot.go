@@ -32,7 +32,7 @@ func main() {
 	//instead of printing to stdout, I create png file. Looks better. 
 	//https://golang.org/pkg/image/png/#pkg-examples  (see func Encode example)
 
-	f, err := os.Create("mandelbrot.png")
+	f, err := os.Create("img_mandelbrot.png")
 	if err != nil {
 		log.Fatal(err)
 	}
