@@ -30,7 +30,7 @@ func main() {
 	//THE BELOW LINE IS COMMENTED OUT FROM BOOK
 	//png.Encode(os.Stdout, img) // NOTE: ignoring errors
 	//instead of printing to stdout, I create png file. Looks better. 
-	//https://golang.org/pkg/image/png/#pkg-examples
+	//https://golang.org/pkg/image/png/#pkg-examples  (see func Encode example)
 
 	f, err := os.Create("mandelbrot.png")
 	if err != nil {
