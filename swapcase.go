@@ -14,20 +14,23 @@ import (
 
 func SwapCase(str string) (result string) {
 
-	for _, val := range str {
-		if unicode.IsUpper(rune(val)){
-			val = unicode.ToLower(rune(val))
-		} else if unicode.IsLower(rune(val)){
-			val = unicode.ToUpper(rune(val))
+	//convert string to rune slice to use unicode package
+	str2 := []rune(str) 
+
+	for _, val := range str2 {
+		if unicode.IsUpper(val){
+			val = unicode.ToLower(val)
+		} else if unicode.IsLower(val) {
+			val = unicode.ToUpper(val)
 		} else {
 			val = val
 		}
-		result += string(val)		
+		result += string(val) 
 	}
 	return result
 }
 
 func main() {
-	fmt.Println(SwapCase("Hello World!"))
+	fmt.Println(SwapCase("Hello World!")) //hELLO wORLD!
 }
 
