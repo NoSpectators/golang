@@ -19,9 +19,6 @@ func (p Point) HypotDistance(q Point) float64 {
 	return math.Hypot(q.X-p.X, q.Y-p.Y)
 }
 
-//!-point
-
-//!+path
 
 // A Path is a journey connecting the points with straight lines.
 type Path []Point //a type slice Point
