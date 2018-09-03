@@ -10,7 +10,7 @@ import (
 type Point struct{ X, Y float64 }
 
 // traditional function--not used below at all!
-func HypotDistance(p, q Point) float64 {
+func HypotDistanceTraditional(p, q Point) float64 {
 	return math.Hypot(q.X-p.X, q.Y-p.Y)
 }
 
@@ -31,7 +31,7 @@ func (path Path) Distance() float64 {
 	sum := 0.0
 	for i := range path {
 		if i > 0 {
-			sum += path[i-1].HypotDistance(path[i])
+			sum += path[i-1].HypotDistance(path[i]) //calls method, not function
 		}
 	}
 	return sum
