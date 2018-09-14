@@ -17,12 +17,10 @@ func AdditivePersistence(num int) int {
 		return 0
 	} else {
 		temp := 0
-		numstr := strconv.Itoa(num)
-		//fmt.Printf("%t\n",numstr)
+		numstr := strconv.Itoa(num) //int to str
 		for _, val := range numstr {
-			val, err := strconv.Atoi(string(val)) //loop turned val to a rune
+			val, err := strconv.Atoi(string(val)) //str to int, error check
 			if err == nil {
-				//fmt.Printf("%t\n",val)
 				temp += val
 			}
 		}
