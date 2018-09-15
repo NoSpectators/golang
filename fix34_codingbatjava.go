@@ -14,13 +14,10 @@ fix34([3, 2, 2, 4]) → [3, 4, 2, 2]
 package main 
 
 import (
-
 	"fmt"
-
 )
 
 func fix34(arr []int) ([]int){
-
 
 	for i:= 0; i < len(arr); i++ {
 		if arr[i] == 3 {
